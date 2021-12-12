@@ -43,6 +43,7 @@
                 $modele = $mo->findOneById($_GET['modele']);
                 if($modele->rowCount() == 1){
                     $modele = $modele->fetchObject('Modele');
+                    $mo = new ModeleManager();
                     require_once 'src/views/showModele.php';
                 }
                 else{
@@ -63,8 +64,7 @@
 			$modele = $cm->findOneById($_POST['id']);
 			if($modele->rowCount() == 1){
 				$cm->setId($_POST['id'])
-					->setID($_POST['nom'])
-					->setPrix($_POST['prix']);
+					->setPromo($_POST['promo']);
 				if($cm->update()->rowCount() >= 1){
 					echo "<p class='text-success'>Modele mise à jour.</p>";
 				}
