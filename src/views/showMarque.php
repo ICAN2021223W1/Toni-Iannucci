@@ -10,7 +10,6 @@
 				<tr>
 					<th>Nom</th>
 					<th>Prix</th>
-					<th>Action</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -27,8 +26,8 @@
 								?>
 							</td>
 							<td>
-								<a href="index.php?m=modele_show&modele=<?= $modele->getId(); ?>" class="btn btn-primary">Afficher</a>
-								<a href="index.php?m=modele_delete&modele=<?= $modele->getId(); ?>" class="btn btn-danger">Supprimer</a>
+								<a href="index.php?p=modele_show&modele=<?= $modele->getId(); ?>" class="btn btn-primary">Afficher</a>
+								<a href="index.php?p=modele_delete&modele=<?= $modele->getId(); ?>" class="btn btn-danger">Supprimer</a>
 							</td>
 						</tr>
 						<?php
@@ -48,7 +47,7 @@
 <h2>Modifier la marque</h2>
 <form action="index.php?p=marque_update&marque=<?= $_GET['marque']; ?>"  method="POST">
 	<input type="hidden" name="id" value="<?= $marque->getId(); ?>">
-	<label for="nom">Promo :</label>
+	<label for="nom">Marque :</label>
 	<br>
 	<input type="text" name="nom" id="nom" value="<?= $marque->getNom(); ?>">
 	<br>

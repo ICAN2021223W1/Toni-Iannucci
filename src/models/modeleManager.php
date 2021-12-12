@@ -58,10 +58,11 @@ class ModeleManager extends Modele {
 	  public function updateModele() {
 		$bdd = new BDD();
 		$connexion = $bdd->getCo();
-		$sql = "UPDATE marque SET nom = :n WHERE id = :id;";
+		$sql = "UPDATE marque SET nom = :n , prix = :p WHERE id = :id;";
 		$req = $connexion->prepare($sql);
 		$req->execute([
 			'n' => $this->getNom(),
+			'p'=> $this->getPrix(),
 			'id'=> $this->getId()
 		]);
 

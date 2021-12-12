@@ -3,6 +3,7 @@
         private $id;
         private $nom;
         private $prix;
+        private $marque;
 
         public function setId( int $id) : self {
             $this->id = $id;
